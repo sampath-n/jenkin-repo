@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    statges {
+        stage ("1.clone") {
+            steps {
+                sh "git clone https://github.com/sampath-n/jenkin-repo.git"
+            }
+        }
+        stage ("2.install") {
+            steps {
+                sh "mvn clean install"
+            }
+        }
+    }
+}
